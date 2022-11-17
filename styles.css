@@ -1,0 +1,81 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: Verdana, sans-serif;
+}
+
+body{
+	background: whitesmoke;
+}
+
+h1{
+	text-align: center;
+	padding: 10px;
+}
+
+#navbar{
+	display: block;
+	text-align: center;
+	background: slategray;
+	width: 100%;
+	align-content: center;
+	padding: 5px;
+	text-decoration: none;
+}
+
+	#navbar a{
+		text-decoration: none;
+	}
+
+#searchBar{
+	display: block;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+
+#listOfGames, #gameInfo{
+	border: 2px double grey;
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+	height: auto;
+	text-align: center;
+	background: white;
+	border-radius: 10px;
+	padding: 5px;
+
+}
+	#listOfGames ul li, #gameInfo ul li{
+		list-style: none;
+		padding: 5px;
+		
+	}
+
+	#listOfGames ul li a{
+		text-decoration: none;
+		
+	}
+
+#admin{
+	border: 2px double grey;
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+	height: auto;
+	text-align: center;
+	background: white;
+	border-radius: 10px;
+	padding: 5px;
+}
+
+	#admin h3{
+		padding-bottom: 10px;
+	}
+
+	#admin ul li{
+		list-style: none;
+		padding: 5px;
+	}
+
+
