@@ -1,7 +1,7 @@
 <?php 
 	require('connect.php');
 
-	$query = "SELECT * FROM games ORDER BY game_id DESC";
+	$query = "SELECT * FROM games_genre ORDER BY genre ASC";
 
 	$statement = $db->prepare($query);
 
@@ -22,11 +22,13 @@
 	<?php 
 		include("nav.php")
 	?>
-	<ul>
-		<?php while($row = $statement->fetch()): ?>
-			<li><?= $row['genre'] ?></a></li>
-		<?php endwhile ?>
-	</ul>
-
+	<div id="game_genre">
+		<h3>Genres</h3>
+		<ul>
+			<?php while($row = $statement->fetch()): ?>
+				<li><a href="genresFullPage.php?genre_id=<?= $row['genre_id'] ?>"><?= $row['genre'] ?></a></li>
+			<?php endwhile ?>
+		</ul>
+	</div>
 </body>
 </html>

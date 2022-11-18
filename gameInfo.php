@@ -10,6 +10,7 @@
 	$statement->bindValue(':id', $id, PDO::PARAM_INT);
 
 	$statement->execute();
+
 ?>
 
 <!DOCTYPE html>
@@ -34,6 +35,7 @@
 				<li>Plot: <?= $row['plot'] ?></li>
 			<?php endwhile ?>
 		</ul>
+		<h3><a href="reviews.php">Click here to read reviews!</a></h3>	
 	</div>
 </body>
 </html>

@@ -77,7 +77,7 @@
 			<textarea id="plot" name="plot" rows="10" cols="50"><?= $games['plot']?></textarea>
 			<br>
 			<button type="submit">Update</button>
-			<button type="submit" formaction="delete.php">Remove Game</button>
+			<button type="submit" formaction="delete.php">Remove Game</button>	
 		</form>
 	<?php elseif(empty($games['game_title']) && empty($games['release_date']) && empty($games['genre']) && empty($games['plot'])): ?>
 		<h5><?= $error ?></h5>

@@ -11,6 +11,6 @@
 
 	$statement->execute();
 
-	header("Location: index.php");
+	header("Location: admin.php");
 	exit;
 ?>
