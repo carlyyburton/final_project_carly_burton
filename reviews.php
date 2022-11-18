@@ -45,13 +45,14 @@
 	?>
 	<div id="reviews">
 		<h4>Sort Reviews By Game Title</h4>
-		<h4><a href="#review_form">Or Click Here to Write Your Own Review!</a></h4>
+		<h4>~</h4>
+		<h4><a href="#review_form">Click Here to Write Your Own Review!</a></h4>
 		<h3>Reviews</h3>
 			<ul>
 			<?php while($row = $statement->fetch()): ?>
-				<li>Game: <?= $row['game_title'] ?></li>
-				<li>Reviewed By: <?= $row['reviewer'] ?></li>
-				<li>Review: <?= $row['comment'] ?></li>
+				<li><span>Game:</span> <?= $row['game_title'] ?></li>
+				<li><span>Reviewed By:</span> <?= $row['reviewer'] ?></li>
+				<li><span>Review:</span> <?= $row['comment'] ?></li>
 				<br>
 			<?php endwhile ?>
 			</ul>
@@ -61,13 +62,16 @@
 			<label for="title">Game Title:</label>
 			<input type="text" name="title">
 			<br>
+			<br>
 			<label for="name">Your Name:</label>
 			<input type="text" name="name">
 			<br>
-			<label for="review">Review:</label>
-			<textarea id="review" rows="8" cols="40"></textarea>
 			<br>
-			<button type="submit">Add Review</button>
+			<label for="review">Review:</label>
+			<textarea id="review" rows="6" cols="35"></textarea>
+			<br>
+			<br>
+			<button type="submit">Submit</button>
 		</form>
 	</div>
 </body>

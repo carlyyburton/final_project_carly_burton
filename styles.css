@@ -1,7 +1,7 @@
 *{
 	margin: 0px;
 	padding: 0px;
-	font-family: Monaco, monospace;
+	font-family: Verdana, sans-serif;
 }
 
 body{
@@ -52,8 +52,12 @@ h1{
 	background: white;
 	border-radius: 10px;
 	padding: 5px;
-
 }
+
+	#gameInfo span{
+		font-weight: bold;
+	}
+
 	#listOfGames ul li, #gameInfo ul li{
 		list-style: none;
 		padding: 5px;
@@ -107,6 +111,14 @@ h1{
 		padding: 5px;
 	}
 
+	#admin ul li a{
+		text-decoration: none;
+	}
+
+	#admin span{
+		color: #e30202;
+	}
+
 #reviews{
 	border: 2px double grey;
 	margin-left: auto;
@@ -124,11 +136,27 @@ h1{
 		padding: 5px;
 	}
 
+	#reviews a{
+		text-decoration: none;
+	}
+
 	#reviews h3{
 		padding-top: 10px;
 	}
 
 	#reviews form{
-		padding: 5px;
+		padding: 15px 5px 5px 10px;
+		border: 1.5px double grey;
+		border-radius: 10px;
+		width: 450px;
+		margin-left: auto;
+		margin-right: auto;
 	}
+	#reviews span{
+		font-weight: bold;
+	}
+
+#review{
+	vertical-align: middle;
+}
 

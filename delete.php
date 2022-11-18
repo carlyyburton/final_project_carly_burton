@@ -1,9 +1,9 @@
 <?php 
 	require('connect.php');
  
-	$id = filter_input(INPUT_POST, 'game_id', FILTER_SANITIZE_NUMBER_INT);
+	$id = filter_input(INPUT_GET, 'game_id', FILTER_SANITIZE_NUMBER_INT);
 
-	$query = "DELETE FROM games WHERE game_id = :game_id";
+	$query = "DELETE FROM games WHERE game_id = :game_id LIMIT 1";
 
 	$statement = $db->prepare($query);
 
