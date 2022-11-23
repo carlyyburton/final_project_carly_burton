@@ -29,6 +29,8 @@
 				<li><a href="genresFullPage.php?genre_id=<?= $row['genre_id'] ?>"><?= $row['genre'] ?></a></li>
 			<?php endwhile ?>
 		</ul>
+		<br>
+		<p><a href="newGenre.php">Add a New Game Genre!</a></p>
 	</div>
 </body>
 </html>

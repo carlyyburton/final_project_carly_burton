@@ -3,13 +3,19 @@
 
 	$genre = filter_input(INPUT_GET, 'genre_id', FILTER_SANITIZE_NUMBER_INT);
 
+	$game = filter_input(INPUT_GET, 'game_id', FILTER_SANITIZE_NUMBER_INT);
+
 	$title = filter_input(INPUT_POST, 'game_title', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-	$query = "SELECT * FROM games_genre WHERE genre_id = :genre";
+	//$query = "SELECT * FROM games_genre WHERE genre_id = :genre_id";
+
+	$query = "SELECT * FROM games_genre JOIN games ON games.game_id = games_genre.game_id WHERE game_id = :game_id";
 
 	$statement = $db->prepare($query);
 
 	$statement->bindValue(':genre_id', $genre, PDO::PARAM_INT);
+	$statement->bindValue(':game_id', $game, PDO::PARAM_INT);
+	$statement->bindValue(':game_title', $title);
 
 	$statement->execute();
 

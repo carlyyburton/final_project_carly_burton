@@ -1,33 +1,11 @@
 <?php 
 	require('connect.php');
 
-	$id = filter_input(INPUT_GET, 'game_id', FILTER_SANITIZE_NUMBER_INT);
-
-	$query = "SELECT * FROM games_comments WHERE game_id = :id";
+	$query = "SELECT * FROM games_comments ORDER BY game_title ASC";
 
 	$statement = $db->prepare($query);
 
-	$statement->bindValue(':id'. $id, PDO::PARAM_INT);
-
 	$statement->execute();
-
-	if ($_POST && !empty($_POST['game_title']) && !empty($_POST['reviewer']) && !empty($_POST['comment'])) {
-        $title = filter_input(INPUT_POST, 'game_title', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        $name = filter_input(INPUT_POST, 'reviewer', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        $review = filter_input(INPUT_POST, 'comment', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        
-        $query = "INSERT INTO games_comments (game_title, reviewer, comment) VALUES (:game_title, :reviewer, :comment)";
-        $statement = $db->prepare($query);
-        
-        $statement->bindValue(':game_title', $title);
-        $statement->bindValue(':reviewer', $name);
-        $statement->bindValue(':comment', $review);
-         
-        if ($statement->execute()) {
-            echo "Success";
-        }
-
-    }
 
 ?>
 
@@ -46,7 +24,7 @@
 	<div id="reviews">
 		<h4>Sort Reviews By Game Title</h4>
 		<h4>~</h4>
-		<h4><a href="#review_form">Click Here to Write Your Own Review!</a></h4>
+		<h4><a href="addReview.php">Click Here to Write Your Own Review!</a></h4>
 		<h3>Reviews</h3>
 			<ul>
 			<?php while($row = $statement->fetch()): ?>
@@ -56,23 +34,6 @@
 				<br>
 			<?php endwhile ?>
 			</ul>
-		<h3>Write Your Review Below!</h3>
-		<form method="post"
-			  id="review_form">
-			<label for="title">Game Title:</label>
-			<input type="text" name="title">
-			<br>
-			<br>
-			<label for="name">Your Name:</label>
-			<input type="text" name="name">
-			<br>
-			<br>
-			<label for="review">Review:</label>
-			<textarea id="review" rows="6" cols="35"></textarea>
-			<br>
-			<br>
-			<button type="submit">Submit</button>
-		</form>
 	</div>
 </body>
 </html>

@@ -42,7 +42,7 @@ h1{
 	text-align: center;
 }
 
-#listOfGames, #gameInfo{
+#listOfGames, #gameInfo, #newGenre{
 	border: 2px double grey;
 	margin-left: auto;
 	margin-right: auto;
@@ -90,6 +90,10 @@ h1{
 		text-decoration: none;
 	}
 
+	#game_genre p a{
+		text-decoration: none;
+	}
+
 #admin{
 	border: 2px double grey;
 	margin-left: auto;
@@ -112,6 +116,10 @@ h1{
 	}
 
 	#admin ul li a{
+		text-decoration: none;
+	}
+
+	#admin p a{
 		text-decoration: none;
 	}
 
@@ -146,8 +154,6 @@ h1{
 
 	#reviews form{
 		padding: 15px 5px 5px 10px;
-		border: 1.5px double grey;
-		border-radius: 10px;
 		width: 450px;
 		margin-left: auto;
 		margin-right: auto;
@@ -158,5 +164,25 @@ h1{
 
 #review{
 	vertical-align: middle;
+}
+
+#comment{
+	vertical-align: middle;
+}
+
+.container{
+	padding: 5px;
+	line-height: 2.5em;
+}
+
+#captcha{
+	text-decoration: line-through;
+	background: slateblue;
+	color: white;
+	width: 150px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1.7em;
+	font-style: italic;
 }
 

@@ -17,6 +17,7 @@
 		<nav>
 			<a href="index.php">Home Page</a> |
 			<a href="genre.php">Game Genres</a> |
+			<a href="reviews.php">Reviews</a> |
 			<a href="admin.php">Admin</a>
 		</nav>
 	</div>
