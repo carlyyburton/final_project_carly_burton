@@ -34,7 +34,7 @@
 	?>
 	<div id="reviews" >
 		<div class="container">
-		<h4>Verify that you're human</h4>
+		<h4>First, verify that you're human.</h4>
       <div id="captcha" class="captcha"><script>createCaptcha();</script></div>
       <div class="restart">
         <a href="#" onclick="createCaptcha()">New Captcha</a>

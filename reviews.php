@@ -31,6 +31,7 @@
 				<li><span>Game:</span> <?= $row['game_title'] ?></li>
 				<li><span>Reviewed By:</span> <?= $row['reviewer'] ?></li>
 				<li><span>Review:</span> <?= $row['comment'] ?></li>
+				<li><a onclick="if(!confirm('Are you sure you want to delete this review?')) event.preventDefault()" href="delete.php?comment_id=<?= $row['comment_id'] ?>">Delete?</a></li>
 				<br>
 			<?php endwhile ?>
 			</ul>

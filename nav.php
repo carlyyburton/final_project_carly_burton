@@ -22,7 +22,7 @@
 		</nav>
 	</div>
 	<form id="searchBar">
-		<input type="text" name="search">
+		<input type="text" name="search" placeholder="Search By Game Title">
 		<button type="submit">Search</button>
 	</form>
 </body>

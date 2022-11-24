@@ -3,7 +3,7 @@
 
 	if ($_POST && !empty($_POST['game_title']) && !empty($_POST['release_date']) && !empty($_POST['genre']) && !empty($_POST['plot'])) {
 
-		$id = filter_input(INPUT_GET, 'game_id', FILTER_SANITIZE_NUMBER_INT);
+		$id = filter_input(INPUT_POST, 'game_id', FILTER_SANITIZE_NUMBER_INT);
 		$title = filter_input(INPUT_POST, 'game_title', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 		$date = filter_input(INPUT_POST, 'release_date', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 		$genre = filter_input(INPUT_POST, 'genre', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -39,7 +39,7 @@
 		$id = false;
 	}
 
-	$error = "*Make sure all fields are filled out before submitting.*";
+	$error = "*Make sure all fields are filled out before submitting*";
 
 ?>
 
@@ -57,14 +57,17 @@
 	?>
 	<?php if($id): ?>
 		<form method="post"
+			  id="edit"
 			  action="edit.php">
-			<input type="hidden" name="id" value="<?= $games['game_id'] ?>">
+			<input type="hidden" name="game_id" value="<?= $games['game_id'] ?>">
 
-			<label for="game_title">Game Title</label>
+			<label for="game_title">Game Title:</label>
 			<input type="text" name="game_title" value="<?= $games['game_title'] ?>">
-			<label for="release_date">Release Date</label>
 			<br>
+			<br>
+			<label for="release_date">Release Date:</label>
 			<input type="date" name="release_date" value="<?= $games['release_date'] ?>">
+			<br>
 			<br>
 			<label for="genre">Genre:</label>
 			<select name="genre" id="genre" value="<?= $games['genre'] ?>">
@@ -74,8 +77,10 @@
 			<option value="Sports">Sports</option>
 			</select>
 			<br>
-			<label for="plot">Plot</label>
+			<br>
+			<label for="plot">Plot:</label>
 			<textarea id="plot" name="plot" rows="10" cols="50"><?= $games['plot']?></textarea>
+			<br>
 			<br>
 			<button type="submit">Update</button>
 			<button type="submit" formaction="admin.php">Cancel</button>	

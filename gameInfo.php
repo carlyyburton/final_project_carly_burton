@@ -32,6 +32,7 @@
 				<li><span>Release Date:</span> <?= $row['release_date'] ?></li>
 				<li><span>Genre:</span> <?= $row['genre']?></li>
 				<li><span>Plot:</span> <?= $row['plot'] ?></li>
+				<li><img src="uploads/<?= $row['image'] ?>.jpg" alt="image"></li>
 			<?php endwhile ?>
 		</ul>
 		<br>

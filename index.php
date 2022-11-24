@@ -6,6 +6,7 @@
 	$statement = $db->prepare($query);
 
 	$statement->execute();
+
 ?>
 
 <!DOCTYPE html>

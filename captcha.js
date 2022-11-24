@@ -38,7 +38,6 @@ function validateCaptcha() {
   } else if (validateCaptcha > 0 || recaptcha.length > 6) {
     errCaptcha.innerHTML = "Captcha Incorrect";
   } else {
-    errCaptcha.innerHTML = "Captcha Correct";
     hideReviewForm();
   }
 }
