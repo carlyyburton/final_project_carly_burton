@@ -131,6 +131,10 @@ h1{
 		color: #e30202;
 	}
 
+	#admin a:hover{
+		color: #9657c9;
+	}
+
 #reviews{
 	border: 2px double grey;
 	margin-left: auto;
@@ -166,6 +170,10 @@ h1{
 		font-weight: bold;
 	}
 
+	#reviews a:hover{
+		color: #9657c9;
+	}
+
 #review{
 	vertical-align: middle;
 }
@@ -181,7 +189,7 @@ h1{
 
 #captcha{
 	text-decoration: line-through;
-	background: slateblue;
+	background: #5e7cff;
 	color: white;
 	width: 150px;
 	margin-left: auto;
