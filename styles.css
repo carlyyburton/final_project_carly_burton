@@ -42,7 +42,7 @@ h1{
 	text-align: center;
 }
 
-#listOfGames, #gameInfo, #newGenre, #newGameForm, #edit{
+#listOfGames, #gameInfo, #newGenre, #newGameForm, #edit, #results{
 	border: 2px double grey;
 	margin-left: auto;
 	margin-right: auto;
