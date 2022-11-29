@@ -1,20 +1,13 @@
 <?php 
 	require("connect.php");
 
-	$search = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-
-	//$title = filter_input(INPUT_POST, 'game_title', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+	$search = filter_input(INPUT_POST, 'search', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
 	$query = "SELECT * FROM games WHERE game_title LIKE '%$search%'";
 
 	$statement = $db->prepare($query);
 
-	//$statement->bindValue(':search', $search);
-	//$statement->bindValue(':game_title', $title);
-
 	$statement->execute();
-
-	$row = $statement->fetch();
 
 ?>
 
@@ -32,11 +25,9 @@
 	<div id="results">
 		<h4>Results</h4>
 		<br>
-	<?php if(count($row) > 0): ?>
+	<?php while($row = $statement->fetch()): ?>
 		<p><a href="gameInfo.php?game_id=<?= $row['game_id'] ?>"><?= $row['game_title'] ?></a></p>
-	<?php else: ?>
-		<p>No Results</p>
-	<?php endif ?>
+	<?php endwhile ?>
 	</div>
 </body>
 </html>
