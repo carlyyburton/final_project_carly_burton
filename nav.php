@@ -18,14 +18,14 @@
 			<a href="index.php">Home Page</a> |
 			<a href="genre.php">Game Genres</a> |
 			<a href="reviews.php">Reviews</a> |
-			<a href="admin.php">Admin</a>
+			<a href="admin.php">Log In</a>
 		</nav>
 	</div>
 	<form method="post"
 		  id="searchBar"
 		  action="search.php">
 		<input type="text" name="search" id="search" placeholder="Search By Game Title">
-		<button type="submit">Search</button>
+		<button type="submit" onclick="if(document.querySelector('#search').value.length < 1) event.preventDefault()">Search</button>
 	</form>
 </body>
 </html>

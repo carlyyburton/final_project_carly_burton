@@ -9,6 +9,8 @@
 
 	$statement->execute();
 
+	$rows = $statement->rowCount();
+
 ?>
 
 <!DOCTYPE html>
@@ -28,6 +30,9 @@
 	<?php while($row = $statement->fetch()): ?>
 		<p><a href="gameInfo.php?game_id=<?= $row['game_id'] ?>"><?= $row['game_title'] ?></a></p>
 	<?php endwhile ?>
+	<?php if($rows == 0): ?>
+		<p>No Results Found.</p>
+	<?php endif ?>
 	</div>
 </body>
 </html>

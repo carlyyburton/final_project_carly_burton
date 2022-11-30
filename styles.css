@@ -42,7 +42,7 @@ h1{
 	text-align: center;
 }
 
-#listOfGames, #gameInfo, #newGenre, #newGameForm, #edit, #results{
+#listOfGames, #gameInfo, #newGenre, #newGameForm, #edit, #results, #fullGenres{
 	border: 2px double grey;
 	margin-left: auto;
 	margin-right: auto;
@@ -58,7 +58,7 @@ h1{
 		font-weight: bold;
 	}
 
-	#listOfGames ul li, #gameInfo ul li{
+	#listOfGames ul li, #gameInfo ul li, #fullGenres ul li{
 		list-style: none;
 		padding: 5px;
 		

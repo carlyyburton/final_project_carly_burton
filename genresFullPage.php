@@ -1,25 +1,21 @@
 <?php 
 	require('connect.php');
 
-	$genre = filter_input(INPUT_GET, 'genre_id', FILTER_SANITIZE_NUMBER_INT);
+	//$id = filter_input(INPUT_POST, 'game_id', FILTER_SANITIZE_NUMBER_INT);
 
-	$game = filter_input(INPUT_GET, 'game_id', FILTER_SANITIZE_NUMBER_INT);
+	$genre = filter_input(INPUT_GET, 'genre', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
 	$title = filter_input(INPUT_POST, 'game_title', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-	//$query = "SELECT * FROM games_genre WHERE genre_id = :genre_id";
-
-	$query = "SELECT * FROM games_genre JOIN games ON games.game_id = games_genre.game_id WHERE game_id = :game_id";
+	$query = "SELECT game_title FROM games WHERE genre LIKE '%$genre%'";
 
 	$statement = $db->prepare($query);
 
-	$statement->bindValue(':genre_id', $genre, PDO::PARAM_INT);
-	$statement->bindValue(':game_id', $game, PDO::PARAM_INT);
-	$statement->bindValue(':game_title', $title);
+	//$statement->bindValue(':genre', $genre);
+	//$statement->bindValue(':game_id', $id, PDO::PARAM_INT);
+	//$statement->bindValue(':game_title', $title);
 
 	$statement->execute();
-
-	//THIS PAGE IS NOT WORKING RIGHT NOW 
 
 ?>
 
@@ -37,9 +33,11 @@
 	?>
 	<div id="fullGenres">
 		<h3>Games</h3>
+		<ul>
 		<?php while($row = $statement->fetch()): ?>
 			<li><?= $row['game_title'] ?></li>
 		<?php endwhile ?>
+		</ul>
 	</div>
 </body>
 </html>
