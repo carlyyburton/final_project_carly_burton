@@ -18,7 +18,7 @@ h1{
 	text-align: center;
 	background: rgb(191,207,255);
 	background: linear-gradient(180deg, rgba(191,207,255,1) 0%, rgba(119,140,255,1) 100%);
-	width: 600px;
+	width: 650px;
 	padding: 5px;
 	margin-left: auto;
 	margin-right: auto;
@@ -42,7 +42,7 @@ h1{
 	text-align: center;
 }
 
-#listOfGames, #gameInfo, #newGenre, #newGameForm, #edit, #results, #fullGenres{
+#listOfGames, #gameInfo, #newGenre, #newGameForm, #edit, #results, #fullGenres, #login, #account{
 	border: 2px double grey;
 	margin-left: auto;
 	margin-right: auto;
@@ -201,5 +201,15 @@ h1{
 
 #errCaptcha{
 	color: red;
+}
+
+#account p{
+	font-size: 0.8em;
+	color: red;
+}
+
+#logout{
+	text-align: center;
+	padding-bottom: 10px;
 }
 

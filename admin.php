@@ -9,6 +9,12 @@
 
 	$statement->execute();
 
+	$query2 = "SELECT * FROM users ORDER BY username ASC";
+
+	$statement2 = $db->prepare($query2);
+
+	$statement2->execute();
+
 ?>
 
 <!DOCTYPE html>
@@ -33,6 +39,14 @@
 			</ul>
 			<br>
 		<p><a href="newGame.php">Add a New Game to the List!</a></p>
+		<br>
+		<br>
+		<h4>Users</h4>
+		<ul>
+		<?php while($row2 = $statement2->fetch()): ?>
+			<li><?= $row2['username'] ?></li>
+		<?php endwhile ?>
+		</ul>
 	</div>
 </body>
 </html>

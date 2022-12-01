@@ -13,12 +13,20 @@
 </head>
 <body>
 	<h1>Video Game Database</h1>
+	<div id="logout">
+		<?//php if(): ?>
+
+		<?//php endif ?>
+	<h4>Hello User!</h4>
+	<a href="logout.php">Log out?</a>
+	</div>
 	<div id="navbar">
 		<nav>
 			<a href="index.php">Home Page</a> |
 			<a href="genre.php">Game Genres</a> |
 			<a href="reviews.php">Reviews</a> |
-			<a href="admin.php">Log In</a>
+			<a href="login.php">Log In</a> |
+			<a href="admin.php">Admin</a>
 		</nav>
 	</div>
 	<form method="post"
