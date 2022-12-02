@@ -3,21 +3,31 @@
 
 	session_start();
 
+	$username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+	$password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
 	if(isset($_POST['username']) && isset($_POST['password'])) {
-		$username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-
-		$password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-
 		$query = "SELECT * FROM users WHERE username = :username AND password = :password";
 
 		$statement = $db->prepare($query);
 
-	    $statement->bindValue(':username', $username);
-	    $statement->bindValue(':password', $password);
+	    $statement->execute(
+	    	array(':username' => $username,
+	    		  ':password' => $password));
+	    $row = $statement->fetch();
 
-	    if ($statement->execute()) {
-            echo "Logged In";
-        }
+	    $count = $statement->rowCount();
+
+     	if($count > 0) {
+     		$_SESSION['user_login'] = $row['username'];
+        	alert("Login Successful!");
+     	}
+	}
+
+	if(isset($_SESSION['user_login'])){
+		alert("Already logged in!");
+		header("refresh:2; index.php");
 	}
 
 ?>
@@ -44,7 +54,7 @@
 		<br>
 		<br>
 		<label for="password" id="password">Password:</label>
-		<input type="text" name="password" placeholder="********">
+		<input type="password" name="password" placeholder="********">
 		<br>
 		<br>
 		<button>Log In</button>

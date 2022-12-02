@@ -14,11 +14,7 @@
 <body>
 	<h1>Video Game Database</h1>
 	<div id="logout">
-		<?//php if(): ?>
-
-		<?//php endif ?>
-	<h4>Hello User!</h4>
-	<a href="logout.php">Log out?</a>
+		<a href="logout.php">Log Out?</a>
 	</div>
 	<div id="navbar">
 		<nav>

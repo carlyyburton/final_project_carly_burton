@@ -73,6 +73,23 @@ h1{
 	vertical-align: middle;
 }
 
+.image{
+	border: 1px double grey;
+	border-radius: 10px;
+	width: 450px;
+	padding: 5px;
+	line-height: 1.8em;
+	margin-right: auto;
+	margin-left: auto;
+	background: #E9EDF4;
+}
+
+	.image p{
+		font-size: 0.9em;
+		font-style: italic;
+		text-decoration: underline;
+	}
+
 #game_genre{
 	border: 2px double grey;
 	margin-left: auto;
@@ -209,7 +226,19 @@ h1{
 }
 
 #logout{
-	text-align: center;
-	padding-bottom: 10px;
+	position: absolute;
+	top: 2%;
+	right: 6%;
+	padding: 5px;
+	border: 1.5px solid grey;
+	border-radius: 10px;
+	background: white;
 }
+	#logout a{
+		text-decoration: none;
+	}
+
+	#logout a:hover{
+		color: orange;
+	}
 

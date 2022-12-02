@@ -41,7 +41,7 @@
 		<p>(Username must be 10 characters or less)</p>
 		<br>
 		<label for="password" id="password">Create a Password</label>
-		<input type="text" name="password">
+		<input type="password" name="password">
 		<br>
 		<br>
 		<button type="submit">Create Account</button>

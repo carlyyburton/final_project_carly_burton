@@ -96,12 +96,15 @@
 			<br>
 			<textarea id="plot" name="plot" rows="10" cols="60"></textarea>
 			<br>
-			<label for='image'>Image:</label>
-	        <input type='file' name='image' id='image'>
-	        <br>
-	        <label for="image">Please write the name of the file uploaded here:</label>
-	        <input type="text" name="image" placeholder="filename">
 			<br>
+			<div class="image">
+				<p>Image Optional</p>
+				<label for='image'>Image:</label>
+		        <input type='file' name='image' id='image'>
+		        <br>
+		        <label for="image">Please write the filename here:</label>
+		        <input type="text" name="image" placeholder="filename">
+	         </div>
 			<br>
 			<button type="submit">Create</button>
 		</form>
