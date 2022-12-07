@@ -1,6 +1,8 @@
 <?php 
 	require('connect.php');
 
+	session_start();
+
 	$query = "SELECT * FROM games_comments ORDER BY game_title ASC";
 
 	$statement = $db->prepare($query);

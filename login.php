@@ -3,32 +3,32 @@
 
 	session_start();
 
-	$username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+	if(isset($_POST['loginBtn'])) {
+		$email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-	$password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+		$password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-	if(isset($_POST['username']) && isset($_POST['password'])) {
-		$query = "SELECT * FROM users WHERE username = :username AND password = :password";
+	    $query = "SELECT * FROM users WHERE email = :email";
 
-		$statement = $db->prepare($query);
+	    $statement = $db->prepare($query);
 
-	    $statement->execute(
-	    	array(':username' => $username,
-	    		  ':password' => $password));
+	    $statement->bindValue(':email', $email);
+
+	    $statement->execute();
+
+	    // $row is currently returning false 
 	    $row = $statement->fetch();
 
-	    $count = $statement->rowCount();
+	    if($row === true) {
+			$_SESSION['user_id'] = $user['user_id'];
+    		$_SESSION['logged_in'] = time();
 
-     	if($count > 0) {
-     		$_SESSION['user_login'] = $row['username'];
-        	alert("Login Successful!");
-     	}
+    		header("Location:index.php");
+	    }else {
+    		echo "Incorrect Information";
+	    }
 	}
 
-	if(isset($_SESSION['user_login'])){
-		alert("Already logged in!");
-		header("refresh:2; index.php");
-	}
 
 ?>
 
@@ -49,20 +49,18 @@
 	<form action="login.php"
 		  method="post"
 		  id="loginForm">
-		<label for="username" id="username">Username:</label>
-		<input type="text" id="username" placeholder="username">
+		<label for="email" id="email">Email:</label>
+		<input type="email" id="email" placeholder="example@gmail.com">
 		<br>
 		<br>
 		<label for="password" id="password">Password:</label>
 		<input type="password" name="password" placeholder="********">
 		<br>
 		<br>
-		<button>Log In</button>
+		<button type="submit" name="loginBtn">Log In</button>
 	</form>
 	<br>
 	<a href="createAccount.php">Don't have an account?</a>
-
-
 	</div>
 </body>
 </html>

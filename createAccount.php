@@ -1,15 +1,15 @@
 <?php 
 	require("connect.php");
 
-	if ($_POST && !empty($_POST['username']) && !empty($_POST['password'])) {
-		$username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+	if ($_POST && !empty($_POST['email']) && !empty($_POST['password'])) {
+		$email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
 		$password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         
-        $query = "INSERT INTO users (username, password) VALUES (:username, :password)";
+        $query = "INSERT INTO users (email, password) VALUES (:email, :password)";
         $statement = $db->prepare($query);
         
-        $statement->bindValue(':username', $username);
+        $statement->bindValue(':email', $email);
         $statement->bindValue(':password', $password);
          
         if ($statement->execute()) {
@@ -36,16 +36,22 @@
 	<form action="createAccount.php"
 		  method="post"
 		  id="createAccount">
-		<label for="username" id="username">Create a Username</label>
-		<input type="text" name="username">
-		<p>(Username must be 10 characters or less)</p>
+		<label for="email" id="email">Enter a Valid Email Address:</label>
+		<input type="email" name="email" placeholder="example@gmail.com">
 		<br>
-		<label for="password" id="password">Create a Password</label>
+		<br>
+		<label for="password" id="password">Create a Password:</label>
 		<input type="password" name="password">
 		<br>
 		<br>
 		<button type="submit">Create Account</button>
 	</form>
+	<?php if (empty($email)): ?>
+			<h5>Must enter a valid email.</h5>	
+	<?php endif ?>
+	<?php if (empty($password)): ?>
+		<h5>Must enter a password.</h5>	
+	<?php endif ?>
 	</div>
 </body>
 </html>

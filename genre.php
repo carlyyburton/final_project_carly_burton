@@ -1,12 +1,13 @@
 <?php 
 	require('connect.php');
 
+	session_start();
+
 	$query = "SELECT * FROM games_genre ORDER BY genre ASC";
 
 	$statement = $db->prepare($query);
 
 	$statement->execute();
-
 
 ?>
 
@@ -26,11 +27,9 @@
 		<h3>Genres</h3>
 		<ul>
 			<?php while($row = $statement->fetch()): ?>
-				<li><a href="genresFullPage.php?genre_id=<?= $row['genre_id'] ?>"><?= $row['genre'] ?></a></li>
+				<li><a href="genresFullPage.php?genre=<?= $row['genre'] ?>"><?= $row['genre'] ?></a></li>
 			<?php endwhile ?>
 		</ul>
-		<br>
-		<p><a href="newGenre.php">Add a New Game Genre!</a></p>
 	</div>
 </body>
 </html>

@@ -64,7 +64,7 @@ h1{
 		
 	}
 
-	#listOfGames ul li a{
+	#listOfGames ul li a, #fullGenres ul li a{
 		text-decoration: none;
 		
 	}
@@ -226,16 +226,16 @@ h1{
 }
 
 #logout{
-	position: absolute;
-	top: 2%;
-	right: 6%;
-	padding: 5px;
-	border: 1.5px solid grey;
-	border-radius: 10px;
-	background: white;
+	margin-right: auto;
+	margin-left: auto;
+	width: 200px;
+	padding-bottom: 10px;
+	text-align: center;
+	
 }
 	#logout a{
 		text-decoration: none;
+		font-style: bold;
 	}
 
 	#logout a:hover{

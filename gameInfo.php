@@ -1,6 +1,8 @@
 <?php 
 	require('connect.php');
 
+	session_start();
+
 	$id = filter_input(INPUT_GET, 'game_id', FILTER_SANITIZE_NUMBER_INT);
 
 	$query = "SELECT * FROM games WHERE game_id = :id";

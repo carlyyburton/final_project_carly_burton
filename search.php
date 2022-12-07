@@ -1,6 +1,8 @@
 <?php 
 	require("connect.php");
 
+	session_start();
+
 	$search = filter_input(INPUT_POST, 'search', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
 	$query = "SELECT * FROM games WHERE game_title LIKE '%$search%'";

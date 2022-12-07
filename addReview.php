@@ -1,6 +1,8 @@
 <?php 
 	require("connect.php");
 
+	session_start();
+
 	if ($_POST && !empty($_POST['game_title']) && !empty($_POST['reviewer']) && !empty($_POST['comment'])) {
         $title = filter_input(INPUT_POST, 'game_title', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $name = filter_input(INPUT_POST, 'reviewer', FILTER_SANITIZE_FULL_SPECIAL_CHARS);

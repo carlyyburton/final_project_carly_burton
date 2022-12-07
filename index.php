@@ -1,6 +1,8 @@
 <?php
 	require('connect.php');
 
+	session_start();
+
 	$query = "SELECT * FROM games ORDER BY game_id DESC";
 
 	$statement = $db->prepare($query);

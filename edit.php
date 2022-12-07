@@ -1,6 +1,8 @@
 <?php 
 	require('connect.php');
 
+	session_start();
+
 	if ($_POST && !empty($_POST['game_title']) && !empty($_POST['release_date']) && !empty($_POST['genre']) && !empty($_POST['plot'])) {
 
 		$id = filter_input(INPUT_POST, 'game_id', FILTER_SANITIZE_NUMBER_INT);

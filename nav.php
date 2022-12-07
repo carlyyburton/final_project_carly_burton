@@ -13,9 +13,12 @@
 </head>
 <body>
 	<h1>Video Game Database</h1>
-	<div id="logout">
-		<a href="logout.php">Log Out?</a>
-	</div>
+	<?php if($_SESSION): ?>
+		<div id="logout">
+			<p>Welcome back, <?= $_SESSION['user_id'] ?></p>
+			<a href="logout.php">Log Out?</a>
+		</div>
+	<?php endif ?>
 	<div id="navbar">
 		<nav>
 			<a href="index.php">Home Page</a> |

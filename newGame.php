@@ -1,6 +1,8 @@
 <?php
 	require('connect.php');
 
+	session_start();
+
 	if ($_POST && !empty($_POST['game_title']) && !empty($_POST['plot'])) {
         $title = filter_input(INPUT_POST, 'game_title', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $date = filter_input(INPUT_POST, 'release_date', FILTER_SANITIZE_FULL_SPECIAL_CHARS);

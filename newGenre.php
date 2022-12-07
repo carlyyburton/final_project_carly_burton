@@ -2,6 +2,8 @@
 	require("connect.php");
 
 	require("authenticate.php");
+	
+	session_start();
 
 	if ($_POST && !empty($_POST['genre'])) {
         $genre = filter_input(INPUT_POST, 'genre', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
