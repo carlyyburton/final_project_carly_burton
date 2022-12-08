@@ -3,7 +3,7 @@
 
 	session_start();
 
-	$query = "SELECT * FROM games ORDER BY game_id DESC";
+	$query = "SELECT * FROM games ORDER BY game_title ASC";
 
 	$statement = $db->prepare($query);
 

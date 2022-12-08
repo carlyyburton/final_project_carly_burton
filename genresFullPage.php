@@ -17,6 +17,8 @@
 
 	$statement->execute();
 
+	$count = $statement->rowCount();
+
 ?>
 
 <!DOCTYPE html>
@@ -38,6 +40,9 @@
 			<li><a href="gameInfo.php?game_id=<?= $row['game_id'] ?>"><?= $row['game_title'] ?></a></li>
 		<?php endwhile ?>
 		</ul>
+		<?php if($count === 0): ?>
+			<p>No games found in this genre.</p>
+		<?php endif ?>
 	</div>
 </body>
 </html>

@@ -58,6 +58,10 @@ h1{
 		font-weight: bold;
 	}
 
+	#gameInfo img{
+		max-width: 400px;
+	}
+
 	#listOfGames ul li, #gameInfo ul li, #fullGenres ul li{
 		list-style: none;
 		padding: 5px;
@@ -68,6 +72,10 @@ h1{
 		text-decoration: none;
 		
 	}
+
+#newGameForm{
+	line-height: 1.5em;
+}
 
 #plot{
 	vertical-align: middle;

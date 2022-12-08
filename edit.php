@@ -10,8 +10,9 @@
 		$date = filter_input(INPUT_POST, 'release_date', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 		$genre = filter_input(INPUT_POST, 'genre', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 		$plot = filter_input(INPUT_POST, 'plot', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+		$image = filter_input(INPUT_POST, 'image', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-		$query = "UPDATE games SET game_title = :game_title, release_date = :release_date, genre = :genre, plot = :plot WHERE game_id = :game_id LIMIT 1";
+		$query = "UPDATE games SET game_title = :game_title, release_date = :release_date, genre = :genre, plot = :plot, image = :image WHERE game_id = :game_id LIMIT 1";
 
 		$statement = $db->prepare($query);
 
@@ -20,6 +21,7 @@
 		$statement->bindValue(':release_date', $date);
 		$statement->bindValue(':genre', $genre);
 		$statement->bindValue(':plot', $plot);
+		$statement->bindValue(':image', $image);
 
 		$statement->execute();
 
@@ -75,6 +77,7 @@
 			<select name="genre" id="genre" value="<?= $games['genre'] ?>">
 			<option value="Action RPG">Action RPG</option>
 			<option value="Fighting">Fighting</option>
+			<option value="Puzzle">Puzzle</option>
 			<option value="Racing">Racing</option>
 			<option value="Sports">Sports</option>
 			</select>
@@ -83,6 +86,12 @@
 			<label for="plot">Plot:</label>
 			<textarea id="plot" name="plot" rows="10" cols="50"><?= $games['plot']?></textarea>
 			<br>
+			<br>
+			<?php if(!empty($games['image'])): ?>
+				<label for="image">Current Image: <?= $games['image'] ?>.jpg - Remove Image?</label>
+				<input type="checkbox" name="image" id="imageChecked" onClick="if(document.querySelector('#imageChecked').checked == true) document.querySelector('#image').value = ''">
+				<br>	
+			<?php endif ?>
 			<br>
 			<button type="submit">Update</button>
 			<button type="submit" formaction="admin.php">Cancel</button>	

@@ -90,6 +90,7 @@
 			<select name="genre" id="genre">
 				<option value="Action RPG">Action RPG</option>
 				<option value="Fighting">Fighting</option>
+				<option value="Puzzle">Puzzle</option>
 				<option value="Racing">Racing</option>
 				<option value="Sports">Sports</option>
 			</select>

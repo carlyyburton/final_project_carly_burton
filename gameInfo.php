@@ -35,7 +35,7 @@
 				<li><span>Genre:</span> <?= $row['genre']?></li>
 				<li><span>Plot:</span> <?= $row['plot'] ?></li>
 			<?php if(!empty($row['image'])): ?>
-				<li><img src="uploads/<?= $row['image'] ?>.jpg" alt="image"></li>
+				<li><img src="uploads/<?= $row['image'] ?>.jpg" alt="video game"></li>
 			<?php endif ?>
 			<?php endwhile ?>
 		</ul>

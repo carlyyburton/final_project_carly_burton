@@ -8,24 +8,26 @@
 
 		$password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-	    $query = "SELECT * FROM users WHERE email = :email";
+	    $query = "SELECT email, password FROM users WHERE email = :email AND password = :password";
 
 	    $statement = $db->prepare($query);
 
 	    $statement->bindValue(':email', $email);
-
+	    $statement->bindValue(':password', $password);
 	    $statement->execute();
 
 	    // $row is currently returning false 
-	    $row = $statement->fetch();
+	    $row = $statement->fetchAll();
 
-	    if($row === true) {
-			$_SESSION['user_id'] = $user['user_id'];
-    		$_SESSION['logged_in'] = time();
+	    if($statement->rowCount() > 0) {
+			$_SESSION['user_id'] = $row['user_id'];
+			$_SESSION['first_name'] = $row['first_name'];
+    		$_SESSION['logged_in'] = time() + 60*60;
 
     		header("Location:index.php");
+			
 	    }else {
-    		echo "Incorrect Information";
+			echo "Incorrect Information";
 	    }
 	}
 
