@@ -88,8 +88,9 @@
 			<br>
 			<br>
 			<?php if(!empty($games['image'])): ?>
-				<label for="image">Current Image: <?= $games['image'] ?>.jpg - Remove Image?</label>
-				<input type="checkbox" name="image" id="imageChecked" onClick="if(document.querySelector('#imageChecked').checked == true) document.querySelector('#image').value = ''">
+				<label for="image">Current Image Filename:</label>
+				<input type="text" name="image" id="image" value="<?= $games['image'] ?>">
+				<button type="button" id="imageBtn" onClick="document.querySelector('#image').value = ''">Remove Image</button>
 				<br>	
 			<?php endif ?>
 			<br>
