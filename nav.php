@@ -15,7 +15,7 @@
 	<h1>Video Game Database</h1>
 	<?php if($_SESSION): ?>
 		<div id="logout">
-			<p>Welcome back, <?= $_SESSION['first_name'] ?></p>
+			<p>Welcome back!</p>
 			<a href="logout.php">Log Out?</a>
 		</div>
 	<?php endif ?>

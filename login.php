@@ -17,9 +17,9 @@
 	    $statement->execute();
 
 	    // $row is currently returning false 
-	    $row = $statement->fetchAll();
+	    $row = $statement->fetch();
 
-	    if($statement->rowCount() > 0) {
+	    if($row === false) {
 			$_SESSION['user_id'] = $row['user_id'];
 			$_SESSION['first_name'] = $row['first_name'];
     		$_SESSION['logged_in'] = time() + 60*60;

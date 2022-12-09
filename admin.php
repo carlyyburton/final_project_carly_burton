@@ -59,10 +59,14 @@
 		<h4>Users</h4>
 		<ul>
 		<?php while($row2 = $statement2->fetch()): ?>
-			<li><?= $row2['email'] ?> - <a onclick="if(!confirm('Are you sure you want to delete user?')) event.preventDefault()" href="delete.php?user_id=<?= $row2['user_id'] ?>"><span>Delete<span></a></li>
+			<li><?= $row2['first_name'] ?> - <?= $row2['email'] ?> - <a onclick="if(!confirm('Are you sure you want to delete user?')) event.preventDefault()" href="delete.php?user_id=<?= $row2['user_id'] ?>"><span>Delete<span></a></li>
 		<?php endwhile ?>
 		</ul>
 		<br>
 	</div>
+	<footer>
+		<br>
+		<br>
+	</footer>
 </body>
 </html>
