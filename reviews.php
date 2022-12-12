@@ -24,7 +24,10 @@
 		include("nav.php") 
 	?>
 	<div id="reviews">
-		<h4>Sort Reviews By Game Title</h4>
+		<h4>Search For Reviews By Game Title</h4>
+		<label for="comment">Game Title:</label>
+		<input name="comment" placeholder="Search for reviews">
+		<button type="submit">Go!</button>
 		<h4>~</h4>
 		<h4><a href="addReview.php">Click Here to Write Your Own Review!</a></h4>
 		<h3>Reviews</h3>
