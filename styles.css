@@ -1,7 +1,7 @@
 *{
 	margin: 0px;
 	padding: 0px;
-	font-family: Verdana, sans-serif;
+	font-family: Helvetica, sans-serif;
 }
 
 body{
@@ -18,7 +18,7 @@ h1{
 	text-align: center;
 	background: rgb(191,207,255);
 	background: linear-gradient(180deg, rgba(191,207,255,1) 0%, rgba(119,140,255,1) 100%);
-	width: 650px;
+	width: 600px;
 	padding: 5px;
 	margin-left: auto;
 	margin-right: auto;
@@ -54,7 +54,7 @@ h1{
 	padding: 5px;
 }
 
-	#gameInfo span{
+	#gameInfo span, #results span{
 		font-weight: bold;
 	}
 
@@ -62,16 +62,18 @@ h1{
 		max-width: 400px;
 	}
 
-	#listOfGames ul li, #gameInfo ul li, #fullGenres ul li{
+	#listOfGames ul li, #gameInfo ul li, #fullGenres ul li, #results ul li{
 		list-style: none;
 		padding: 5px;
-		
 	}
 
 	#listOfGames ul li a, #fullGenres ul li a{
-		text-decoration: none;
-		
+		text-decoration: none;	
 	}
+
+#reviews{
+	line-height: 1.5em;
+}
 
 #newGameForm{
 	line-height: 1.5em;

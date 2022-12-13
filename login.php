@@ -46,7 +46,7 @@
 		include("nav.php");
 	?>
 	<div id="login">
-	<h4>Log In</h4>
+	<h3>Log In</h3>
 	<br>
 	<form action="login.php"
 		  method="post"

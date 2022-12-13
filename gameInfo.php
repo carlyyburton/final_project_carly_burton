@@ -40,7 +40,7 @@
 			<?php endwhile ?>
 		</ul>
 		<br>
-		<h3><a href="reviews.php">Click here to read reviews!</a></h3>	
+		<h3><a href="addReview.php">Write a Review Here!</a></h3>	
 	</div>
 </body>
 </html>

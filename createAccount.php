@@ -36,16 +36,16 @@
 		include("nav.php");
 	?>
 	<div id="account">
-		<h4>Create an Account</h4>
+		<h3>Create an Account</h3>
 		<br>
 	<form action="createAccount.php"
 		  method="post"
 		  id="createAccount">
-		<label for="first_name" id="first_name">Enter Your First Name:</label>
+		<label for="first_name" id="first_name">First Name:</label>
 		<input type="text" name="first_name">
 		<br>
 		<br>
-		<label for="email" id="email">Enter a Valid Email Address:</label>
+		<label for="email" id="email">Email Address:</label>
 		<input type="email" name="email" placeholder="example@gmail.com">
 		<br>
 		<br>
@@ -55,6 +55,7 @@
 		<br>
 		<button type="submit">Create Account</button>
 	</form>
+	<br>
 	<?php if (empty($name)): ?>
 		<h5>Must enter a name.</h5>	
 	<?php endif ?>

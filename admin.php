@@ -36,7 +36,7 @@
 	?>
 	<div id="admin">
 		<br>
-		<h4>Games</h4>
+		<h3>Games</h3>
 			<ul>
 			<?php while($row = $statement->fetch()): ?>
 				<li><?= $row['game_title'] ?> - <a href="edit.php?game_id=<?= $row['game_id'] ?>">Edit</a> OR <a onclick="if(!confirm('Are you sure you want to delete this game?')) event.preventDefault()" href="delete.php?game_id=<?= $row['game_id'] ?>"><span>Delete<span></a></li>
@@ -46,7 +46,7 @@
 		<p><a href="newGame.php">Add a New Game to the List!</a></p>
 		<p>_______________</p>
 		<br>
-		<h4>Game Genres</h4>
+		<h3>Game Genres</h3>
 			<ul>
 			<?php while($row3 = $statement3->fetch()): ?>
 				<li><?= $row3['genre'] ?></li>
@@ -56,13 +56,14 @@
 			<p><a href="newGenre.php">Add a New Game Genre!</a></p>
 		<p>_______________</p>
 		<br>
-		<h4>Users</h4>
+		<h3>Users</h3>
 		<ul>
 		<?php while($row2 = $statement2->fetch()): ?>
 			<li><?= $row2['first_name'] ?> - <?= $row2['email'] ?> - <a onclick="if(!confirm('Are you sure you want to delete user?')) event.preventDefault()" href="delete.php?user_id=<?= $row2['user_id'] ?>"><span>Delete<span></a></li>
 		<?php endwhile ?>
 		</ul>
 		<br>
+		<p><a href="createAccount.php">Add a New User!</a></p>
 	</div>
 	<footer>
 		<br>

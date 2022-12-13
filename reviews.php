@@ -24,14 +24,19 @@
 		include("nav.php") 
 	?>
 	<div id="reviews">
+		<h3>All Reviews</h3>
+		<br>
+		<h4><a href="addReview.php">Write Your Own Review Here</a></h4>
+		<h4>OR</h4>
 		<h4>Search For Reviews By Game Title</h4>
-		<label for="comment">Game Title:</label>
-		<input name="comment" placeholder="Search for reviews">
-		<button type="submit">Go!</button>
-		<h4>~</h4>
-		<h4><a href="addReview.php">Click Here to Write Your Own Review!</a></h4>
-		<h3>Reviews</h3>
-			<ul>
+		<form id="reviewsSearch"
+			  method="post"
+			  action="reviewsSearch.php">
+			<input type="text" name="reviewSearch" id="reviewSearch" placeholder="Search for reviews">
+			<button type="submit" onclick="if(document.querySelector('#reviewSearch').value.length < 1) event.preventDefault()">Go!</button>
+		</form>
+		<br>
+		<ul>
 			<?php while($row = $statement->fetch()): ?>
 				<li><span>Game:</span> <?= $row['game_title'] ?></li>
 				<li><span>Reviewed By:</span> <?= $row['reviewer'] ?></li>
@@ -39,7 +44,7 @@
 				<li><a onclick="if(!confirm('Are you sure you want to delete this review?')) event.preventDefault()" href="delete.php?comment_id=<?= $row['comment_id'] ?>">Delete?</a></li>
 				<br>
 			<?php endwhile ?>
-			</ul>
+		</ul>
 	</div>
 </body>
 </html>
