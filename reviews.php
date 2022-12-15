@@ -3,7 +3,7 @@
 
 	session_start();
 
-	$query = "SELECT * FROM games_comments ORDER BY game_title ASC";
+	$query = "SELECT * FROM games_comments ORDER BY comment_id DESC";
 
 	$statement = $db->prepare($query);
 
@@ -46,5 +46,9 @@
 			<?php endwhile ?>
 		</ul>
 	</div>
+	<footer>
+	<br>
+	<br>
+	</footer>
 </body>
 </html>
