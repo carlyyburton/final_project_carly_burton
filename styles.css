@@ -20,6 +20,7 @@ h1{
 	background: linear-gradient(180deg, rgba(191,207,255,1) 0%, rgba(119,140,255,1) 100%);
 	width: 600px;
 	padding: 5px;
+	margin-bottom: 10px;
 	margin-left: auto;
 	margin-right: auto;
 	border-radius: 10px;
@@ -38,7 +39,7 @@ h1{
 #searchBar{
 	display: block;
 	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-bottom: 15px;
 	text-align: center;
 }
 
@@ -72,7 +73,7 @@ h1{
 	}
 
 #reviews{
-	line-height: 1.5em;
+	line-height: 1.2em;
 }
 
 #newGameForm{
@@ -185,13 +186,17 @@ h1{
 
 	#reviews h3{
 		padding-top: 10px;
+		text-decoration: underline;
 	}
 
 	#reviews form{
-		padding: 15px 5px 5px 10px;
+		border: 1px double grey;
+		border-radius: 10px;
+		padding: 10px;
 		width: 450px;
 		margin-left: auto;
 		margin-right: auto;
+		background: #E9EDF4;
 	}
 	#reviews span{
 		font-weight: bold;

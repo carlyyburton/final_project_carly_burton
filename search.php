@@ -16,18 +16,19 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Search Results</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 	<?php
 		include("nav.php")
 	?>
 	<div id="results">
-		<h4>Results</h4>
+		<h3>Results</h3>
 		<br>
 	<?php while($row = $statement->fetch()): ?>
 		<p><a href="gameInfo.php?game_id=<?= $row['game_id'] ?>"><?= $row['game_title'] ?></a></p>

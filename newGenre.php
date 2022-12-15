@@ -25,7 +25,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>New Post</title>
+	<title>New Genre</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
@@ -38,7 +38,7 @@
 	<form method="post"
 		  action="newGenre.php">
 		<label for="genre">Genre:</label>
-		<input type="text" name="genre">
+		<input type="text" id="genre" name="genre">
 		<br>
 		<br>
 		<button type="submit">Submit</button>

@@ -25,11 +25,12 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Create an Account</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 	<?php 
@@ -41,16 +42,16 @@
 	<form action="createAccount.php"
 		  method="post"
 		  id="createAccount">
-		<label for="first_name" id="first_name">First Name:</label>
-		<input type="text" name="first_name">
+		<label for="first_name">First Name:</label>
+		<input type="text" id="first_name" name="first_name">
 		<br>
 		<br>
-		<label for="email" id="email">Email Address:</label>
-		<input type="email" name="email" placeholder="example@gmail.com">
+		<label for="email">Email Address:</label>
+		<input type="email" id="email" name="email" placeholder="example@gmail.com">
 		<br>
 		<br>
-		<label for="password" id="password">Create a Password:</label>
-		<input type="password" name="password">
+		<label for="password">Create a Password:</label>
+		<input type="password" id="password" name="password">
 		<br>
 		<br>
 		<button type="submit">Create Account</button>

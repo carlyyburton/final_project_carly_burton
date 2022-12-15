@@ -48,7 +48,7 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -63,18 +63,18 @@
 		<form method="post"
 			  id="edit"
 			  action="edit.php">
-			<input type="hidden" name="game_id" value="<?= $games['game_id'] ?>">
+			<input type="hidden" id="game_id" name="game_id" value="<?= $games['game_id'] ?>">
 
 			<label for="game_title">Game Title:</label>
-			<input type="text" name="game_title" value="<?= $games['game_title'] ?>">
+			<input type="text" id="game_title" name="game_title" value="<?= $games['game_title'] ?>">
 			<br>
 			<br>
 			<label for="release_date">Release Date:</label>
-			<input type="date" name="release_date" value="<?= $games['release_date'] ?>">
+			<input type="date" id="release_date" name="release_date" value="<?= $games['release_date'] ?>">
 			<br>
 			<br>
 			<label for="genre">Genre:</label>
-			<select name="genre" id="genre" value="<?= $games['genre'] ?>">
+			<select name="genre" id="genre">
 			<option value="Action RPG">Action RPG</option>
 			<option value="Fighting">Fighting</option>
 			<option value="Puzzle">Puzzle</option>

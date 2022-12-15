@@ -42,11 +42,12 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Edit Users</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 	<?php 
@@ -59,20 +60,14 @@
 		<form method="post"
 			  id="editUsers"
 			  action="editUsers.php">
-			<input type="hidden" name="user_id" value="<?= $users['user_id'] ?>">
+			<input type="hidden" id="user_id" name="user_id" value="<?= $users['user_id'] ?>">
 
 			<label for="first_name">First Name:</label>
-			<input type="text" name="first_name" id="first_name" value="<?= $users['first_name'] ?>">
-			<br>
-			<br>
+			<input type="text" id="first_name" name="first_name" value="<?= $users['first_name'] ?>"><br><br>
 			<label for="email">Email Address:</label>
-			<input type="email" name="email" id="email" value="<?= $users['email'] ?>">
-			<br>
-			<br>
+			<input type="email" id="email" name="email" value="<?= $users['email'] ?>"><br><br>
 			<label for="password">Password:</label>
-			<input type="text" name="password" id="password" value="<?= $users['password'] ?>">
-			<br>
-			<br>
+			<input type="text" id="password" name="password" value="<?= $users['password'] ?>"><br><br>
 			<button type="submit">Update</button>
 			<button type="submit" formaction="admin.php">Cancel</button>	
 		</form>
